@@ -1,0 +1,22 @@
+{
+    "name": "bruno/loripsumwrapper",
+    "description": "Loripsum API Wrapper in PHP",
+    "type": "a",
+    "require-dev": {
+        "php": "^7.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Monteiro",
+            "email": "bmonteirog@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Loripsum\\": "src/"
+        }
+    }
+}
