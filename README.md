@@ -1,17 +1,8 @@
 # Loripsum API Wrapper in PHP
 
-## Installation
-
-````
-composer require bmonteirog/loripsumwrapper
-````
-
 ## Usage
 
 ````
-<?php
-
-require __DIR__ . '/vendor/autoload.php';
 
 $loripsum = new Loripsum\Wrapper;
 
