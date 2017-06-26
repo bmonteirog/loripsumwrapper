@@ -1,4 +1,4 @@
-# Wrapper para API Loripsum in PHP
+# Loripsum API Wrapper in PHP
 
 ## Usage
 
