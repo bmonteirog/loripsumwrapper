@@ -199,23 +199,7 @@ class WrapperTest extends TestCase
             'code' => [
                 'call' => (rand(0,1) == 1),
                 'methodName' => 'withCode'
-            ],
-            'headers' => [
-                'call' => (rand(0,1) == 1),
-                'methodName' => 'withHeaders'
-            ],
-            'allcaps' => [
-                'call' => (rand(0,1) == 1),
-                'methodName' => 'isAllCaps'
-            ],
-            'prude' => [
-                'call' => (rand(0,1) == 1),
-                'methodName' => 'isPrude'
-            ],
-            'plaintext' => [
-                'call' => (rand(0,1) == 1),
-                'methodName' => 'isPlaintext'
-            ],
+            ]
         ];
 
         foreach($possibleAttributes as $attrName => $attr){

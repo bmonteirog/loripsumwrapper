@@ -22,7 +22,7 @@ class ComposerStaticInit6f12667508d004207f0f207a88797f0f
         ),
         'B' => 
         array (
-            'Bmonteirog\\Loripsum\\' => 20,
+            'Bmonteirog\\' => 11,
         ),
     );
 
@@ -45,9 +45,9 @@ class ComposerStaticInit6f12667508d004207f0f207a88797f0f
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
-        'Bmonteirog\\Loripsum\\' => 
+        'Bmonteirog\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/Bmonteirog',
         ),
     );
 
