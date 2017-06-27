@@ -2,7 +2,7 @@
 
 ## Usage
 
-````
+```php
 <?php
 
 $loripsum = new Loripsum\Wrapper;
@@ -29,4 +29,4 @@ echo $loripsum->length('verylong')
               ->isAllCaps()
               ->isPrude()
               ->render(10); // Render 10 verylong paragraphs with All options           
-````
+```
