@@ -5,7 +5,7 @@ namespace Loripsum;
 class Wrapper implements WrapperInterface
 {
 
-    protected $wrapperInfo;
+    private $wrapperInfo;
     protected $endpoint;
     protected $connection;
 
@@ -36,6 +36,7 @@ class Wrapper implements WrapperInterface
             'verylong'
         ];
 
+        $this->paragraphs = 4;
         $this->decorate = false;
         $this->link = false;
         $this->ul = false;
@@ -49,67 +50,6 @@ class Wrapper implements WrapperInterface
         $this->plaintext = false;
     }
 
-    private function connectToEndpoint()
-    {
-        $this->connection = curl_init();
-        curl_setopt($this->connection, CURLOPT_URL, $this->mountEndpoint());
-        curl_setopt($this->connection, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($this->connection, CURLOPT_USERAGENT, $this->wrapperInfo);
-    }
-
-    private function mountEndpoint()
-    {
-        $url = $this->endpoint;
-
-        $url = $url . '/'.$this->paragraphs;
-
-        $url = $url . '/'.$this->length;
-
-        if($this->decorate)
-            $url = $url . '/decorate';
-
-        if($this->link)
-            $url = $url . '/link';
-
-        if($this->ul)
-            $url = $url . '/ul';
-
-        if($this->ol)
-            $url = $url . '/ol';
-
-        if($this->dl)
-            $url = $url . '/dl';
-
-        if($this->bq)
-            $url = $url . '/bq';
-
-        if($this->code)
-            $url = $url . '/code';
-
-        if($this->headers)
-            $url = $url . '/headers';
-
-        if($this->allcaps)
-            $url = $url . '/allcaps';
-
-        if($this->prude)
-            $url = $url . '/prude';
-
-        if($this->plaintext)
-            $url = $url . '/plaintext';
-
-        return $url;
-    }
-
-    private function requestJson()
-    {
-        $this->connectToEndpoint();
-        $data = curl_exec($this->connection);
-        curl_close($this->connection);
-
-        return $data;
-    }
-
     public function render($paragraphs = 4) : string
     {
         $this->paragraphs = $paragraphs;
@@ -117,7 +57,6 @@ class Wrapper implements WrapperInterface
         $response = $this->requestJson();
 
         return $response;
-        //return $this->mountEndpoint();
     }
 
     public function length($length) : WrapperInterface
@@ -205,5 +144,66 @@ class Wrapper implements WrapperInterface
         $this->plaintext = true;
 
         return $this;
+    }
+
+    public function getMountedEndpoint() : string
+    {
+        $url = $this->endpoint;
+
+        $url = $url . '/'.$this->paragraphs;
+
+        $url = $url . '/'.$this->length;
+
+        if($this->decorate)
+            $url = $url . '/decorate';
+
+        if($this->link)
+            $url = $url . '/link';
+
+        if($this->ul)
+            $url = $url . '/ul';
+
+        if($this->ol)
+            $url = $url . '/ol';
+
+        if($this->dl)
+            $url = $url . '/dl';
+
+        if($this->bq)
+            $url = $url . '/bq';
+
+        if($this->code)
+            $url = $url . '/code';
+
+        if($this->headers)
+            $url = $url . '/headers';
+
+        if($this->allcaps)
+            $url = $url . '/allcaps';
+
+        if($this->prude)
+            $url = $url . '/prude';
+
+        if($this->plaintext)
+            $url = $url . '/plaintext';
+
+        return $url;
+    }
+
+    private function connectToEndpoint()
+    {
+        $this->connection = curl_init();
+        curl_setopt($this->connection, CURLOPT_URL, $this->getMountedEndpoint());
+        curl_setopt($this->connection, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($this->connection, CURLOPT_USERAGENT, $this->wrapperInfo);
+    }
+
+    private function requestJson()
+    {
+        $this->connectToEndpoint();
+        $data = curl_exec($this->connection);
+        curl_close($this->connection);
+
+        return $data;
     }
 }

@@ -31,4 +31,5 @@ interface WrapperInterface
 
     public function isPlaintext() : WrapperInterface;
 
+    public function getMountedEndpoint() : string;
 }
