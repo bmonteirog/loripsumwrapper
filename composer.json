@@ -12,7 +12,7 @@
             "email": "bmonteirog@gmail.com"
         }
     ],
-    "minimum-stability": "alpha",
+    "minimum-stability": "stable",
     "require": {},
     "autoload": {
         "psr-4": {
