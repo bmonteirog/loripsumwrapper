@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$loripsum = new Loripsum\Wrapper;
+$loripsum = new Bmonteirog\Loripsum\Wrapper;
 
 
 echo $loripsum->render(); // Render 4 paragraphs in default Mode

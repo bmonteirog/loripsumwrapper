@@ -1,7 +1,6 @@
 {
-    "name": "bruno/loripsumwrapper",
+    "name": "bmonteirog/loripsumwrapper",
     "description": "Loripsum API Wrapper in PHP",
-    "type": "a",
     "require-dev": {
         "php": "^7.1",
         "phpunit/phpunit": "^6.1"
@@ -13,11 +12,11 @@
             "email": "bmonteirog@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "alpha",
     "require": {},
     "autoload": {
         "psr-4": {
-            "Loripsum\\": "src/"
+            "Bmonteirog\\Loripsum\\": "src/"
         }
     }
 }

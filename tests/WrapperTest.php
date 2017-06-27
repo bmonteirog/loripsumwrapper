@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-use Loripsum\Wrapper as Wrapper;
+use Bmonteirog\Loripsum\Wrapper as Wrapper;
 
 class WrapperTest extends TestCase
 {
@@ -14,9 +14,9 @@ class WrapperTest extends TestCase
     {
         $this->wrapper = new Wrapper;
 
-        $this->assertTrue($this->wrapper instanceof Loripsum\Wrapper);
-        $this->assertTrue($this->wrapper instanceof Loripsum\WrapperInterface);
-        $this->assertFalse($this->wrapper instanceof Loripsum\WrapperUndefined);
+        $this->assertTrue($this->wrapper instanceof Bmonteirog\Loripsum\Wrapper);
+        $this->assertTrue($this->wrapper instanceof Bmonteirog\Loripsum\WrapperInterface);
+        $this->assertFalse($this->wrapper instanceof Bmonteirog\Loripsum\WrapperUndefined);
     }
 
     /**
